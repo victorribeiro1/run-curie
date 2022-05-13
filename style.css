@@ -1,0 +1,262 @@
+@font-face {
+  font-family: "Golden";
+  src: url("medias/fontes/Golden Age.ttf");
+}
+
+@font-face {
+  font-family: "Pixel";
+  src: url("medias/fontes/Pixel Digivolve.otf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+*::-moz-selection {
+  background-color: transparent;
+}
+
+*::selection {
+  background-color: transparent;
+}
+
+html {
+  font-family: 'Pixel';
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  background: linear-gradient(150deg, #005F5E, #469F90);
+}
+
+.jogo {
+  height: 88%;
+  width: 92%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  -webkit-transform: skewX(0deg);
+          transform: skewX(0deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 9999px;
+          perspective: 9999px;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+  overflow: hidden;
+  -webkit-box-shadow: 1px 1px 40px #00000030;
+          box-shadow: 1px 1px 40px #00000030;
+}
+
+.corredor {
+  height: calc(100% / 3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+[corredor='1'] {
+  z-index: 10;
+}
+
+[corredor='2'] {
+  z-index: 100;
+}
+
+[corredor='3'] {
+  z-index: 1000;
+}
+
+.cenarios {
+  height: 48%;
+  background-color: #12917d;
+  background-position: 0 bottom;
+  background-repeat: repeat-x;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cenario {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: inline;
+  right: 0%;
+}
+
+#cenario2 {
+  right: -100%;
+}
+
+.chao {
+  height: 52%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#388dae), to(#0d3271));
+  background: linear-gradient(to bottom, #388dae, #0d3271);
+  background-position: 0 bottom;
+}
+
+.corredor:not(:last-of-type) {
+  /* border-bottom: 1px solid black; */
+}
+
+.madame {
+  height: 140px;
+  margin-left: 150px;
+  position: relative;
+  top: 0px;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+}
+
+.scores {
+  /* border: 1px solid black; */
+  position: absolute;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 150px;
+  font-size: 1.2rem;
+  margin-top: 25px;
+  margin-right: 25px;
+  z-index: 1;
+}
+
+.scores div:first-of-type {
+  width: 50%;
+}
+
+.scores div:nth-of-type(2) {
+  position: relative;
+  -webkit-transform: translateX(-150%);
+          transform: translateX(-150%);
+}
+
+.scores div:last-of-type {
+  width: 30%;
+}
+
+.inimigo {
+  height: 160px;
+  width: 160px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  right: -10%;
+  -webkit-transition: opacity .1s ease;
+  transition: opacity .1s ease;
+}
+
+.pocao {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  right: -10%;
+  -webkit-transition: opacity .1s ease;
+  transition: opacity .1s ease;
+}
+
+.explosao {
+  width: 180px;
+  position: absolute;
+  -webkit-transition: opacity .1s ease;
+  transition: opacity .1s ease;
+}
+
+.pocaoAtirada {
+  height: 130px;
+  position: absolute;
+  -webkit-animation: pocaoAtirada 1s infinite;
+          animation: pocaoAtirada 1s infinite;
+}
+
+.madame.pulo {
+  -webkit-animation: pulo 1.5s ease;
+          animation: pulo 1.5s ease;
+}
+
+@-webkit-keyframes pulo {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -200px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes pulo {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -200px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@-webkit-keyframes pocaoAtirada {
+  0% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  50% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  100% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+}
+
+@keyframes pocaoAtirada {
+  0% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  50% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  100% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(111, 172, 240);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.jogo {
+    width:  100%;
+    height: 100%;
+}
+
+.objetos {
+    position: absolute;
+    width: 100%;
+    bottom: 300px;
+    display: flex;
+    border-bottom: 3px solid black;
+    align-items: flex-end;
+    
+}
+
+
+.gif.knucles {
+    margin-bottom: -10px;
+    object-fit: cover;
+    position: absolute;
+    right: -10%;
+    height: 100px;
+    width: 110px;
+
+}
+
+.gif {
+    height: 100px;
+    width: 100px;
+    /* border: 2px solid red; */
+}
+
+.gif.personagem {
+    margin-left:    50px;
+    margin-bottom: -8px;
+    position: relative;
+    bottom: 0;
+    
+}
+
+.gif.personagem.pulo {
+    animation: pulo 1.5s ease;
+}
+
+@keyframes pulo {
+    0% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: 200px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+
+
+
+
+.gif.moeda {
+    height: 50px;
+    margin-bottom: 10px;
+}    
+
+.objeto {
+    height: 100px;
+    width: 100px;
+
+    background-color: red;
+
+    position: absolute;
+    
+}
